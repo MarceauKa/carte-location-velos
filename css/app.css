@@ -12,19 +12,19 @@ body {
  * DIAPORAMA
  *************/
 .diapo {
-	height: auto;
-	min-height: 370px;
+	height: 370px;
 }
 
-.diapo .diapo-slides {
+.diapo .slides {
 	position: relative;
 	max-width: 100%;
-	height: auto;
-	min-height: 370px;
+	height: 100%;
+	min-height: 100%;
 	margin: 0;
+	overflow: hidden;
 }
 
-.diapo .diapo-slides .diapo-item {
+.diapo .slides .item {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -33,16 +33,62 @@ body {
 	transition: opacity .5s linear;
 }
 
-.diapo .diapo-slides .diapo-item img {
+.diapo .slides .item img {
 	max-width: 100%;
 	height: auto;
 }
 
-.diapo .diapo-slides .diapo-item.active {
+.diapo .slides .item.active {
 	opacity: 1;
 	z-index: 2;
 }
 
-.diapo .diapo-slides .diapo-item.active img {
+.diapo .slides .item.active img {
 
+}
+
+.diapo .controls {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	z-index: 3;
+	width: 100%;
+	height: 20px;
+	top: -185px;
+	padding: 0 10px;
+}
+
+.diapo .controls .arrow {
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	border-radius: 25px;
+	background-color: rgba(255, 255, 255, .3);
+	text-align: center;
+	font-weight: bold;
+	line-height: 40px;
+	cursor: pointer;
+	transition: all .2s ease;
+}
+
+.diapo .controls .arrow:hover,
+.diapo .controls .arrow:focus {
+	background-color: rgba(255, 255, 255, .5);
+}
+
+.diapo .timer {
+	position: relative;
+	z-index: 4;
+	bottom: 25px;
+	height: 5px;
+	width: 100%;
+	background-color: rgba(0, 0, 0, .5);
+}
+
+.diapo .timer span {
+	display: block;
+	width: 0;
+	height: 100%;
+	background-color: rgba(0, 100, 200, .8);
 }
