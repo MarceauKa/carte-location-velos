@@ -1,0 +1,48 @@
+html,
+body {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	padding-top: 80px;
+}
+
+/*************
+ * DIAPORAMA
+ *************/
+.diapo {
+	height: auto;
+	min-height: 370px;
+}
+
+.diapo .diapo-slides {
+	position: relative;
+	max-width: 100%;
+	height: auto;
+	min-height: 370px;
+	margin: 0;
+}
+
+.diapo .diapo-slides .diapo-item {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	z-index: 1;
+	transition: opacity .5s linear;
+}
+
+.diapo .diapo-slides .diapo-item img {
+	max-width: 100%;
+	height: auto;
+}
+
+.diapo .diapo-slides .diapo-item.active {
+	opacity: 1;
+	z-index: 2;
+}
+
+.diapo .diapo-slides .diapo-item.active img {
+
+}
