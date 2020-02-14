@@ -1,3 +1,7 @@
+/**
+ * @author Marceau Ka <marceau@casals.fr>
+ * @licence MIT
+ */
 class Bookform {
 	constructor(id) {
 		this.$el = document.getElementById(id);

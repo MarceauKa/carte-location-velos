@@ -1,3 +1,7 @@
+/**
+ * @author Marceau Ka <marceau@casals.fr>
+ * @licence MIT
+ */
 class Geocode {
 	constructor() {
 		if (!navigator.geolocation) {

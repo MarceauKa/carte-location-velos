@@ -1,3 +1,7 @@
+/**
+ * @author Marceau Ka <marceau@casals.fr>
+ * @licence MIT
+ */
 class Map {
     constructor(id) {
         this.map = L.map(id);

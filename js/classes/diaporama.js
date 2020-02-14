@@ -1,3 +1,7 @@
+/**
+ * @author Marceau Ka <marceau@casals.fr>
+ * @licence MIT
+ */
 class Diaporama {
 	constructor(id, duration = 5000) {
 		this.$el = document.getElementById(id);

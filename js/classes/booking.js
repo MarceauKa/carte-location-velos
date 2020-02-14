@@ -1,3 +1,7 @@
+/**
+ * @author Marceau Ka <marceau@casals.fr>
+ * @licence MIT
+ */
 class Booking {
 	constructor(id) {
 		this.$el = document.getElementById(id);

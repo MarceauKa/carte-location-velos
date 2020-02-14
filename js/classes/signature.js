@@ -1,3 +1,7 @@
+/**
+ * @author Marceau Ka <marceau@casals.fr>
+ * @licence MIT
+ */
 class Signature {
 	constructor(id, lineWidth = 5) {
 		this.$el = document.getElementById(id);

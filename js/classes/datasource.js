@@ -1,3 +1,7 @@
+/**
+ * @author Marceau Ka <marceau@casals.fr>
+ * @licence MIT
+ */
 class DataSource {
 	#apiKey = 'c8521ea47c80b391ef417c496a6b76b01cec6fb5';
 	#contractName = 'toulouse';
