@@ -58,6 +58,7 @@
 					</div>
 				</div>
 			</div>
+
 			<div class="col-12 col-sm-6 mb-4">
 				<div class="card">
 					<div class="card-body">
@@ -77,13 +78,13 @@
 									<div class="row">
 										<div class="col-12 col-sm-6">
 											<div class="form-group">
-												<input type="text" name="lastname" class="form-control" placeholder="Nom" />
+												<input type="text" name="lastname" class="form-control" placeholder="Nom" required />
 											</div>
 										</div>
 
 										<div class="col-12 col-sm-6">
 											<div class="form-group">
-												<input type="text" name="firstname" class="form-control" placeholder="Prénom" />
+												<input type="text" name="firstname" class="form-control" placeholder="Prénom" required />
 											</div>
 										</div>
 									</div>
@@ -94,13 +95,17 @@
 									</div>
 
 									<div class="form-group">
-										<button class="btn btn-primary">Réserver</button>
+										<button type="submit" class="btn btn-primary">Réserver</button>
 									</div>
 								</form>
 							</div>
 						</div>
 					</div>
 				</div>
+			</div>
+
+			<div class="col-12">
+				<p id="booking"></p>
 			</div>
 		</div>
 	</main>
@@ -110,6 +115,7 @@
 	<script src="js/leaflet.js"></script>
 	<script src="js/classes/diaporama.js"></script>
 	<script src="js/classes/bookform.js"></script>
+	<script src="js/classes/booking.js"></script>
 	<script src="js/classes/datasource.js"></script>
 	<script src="js/classes/geocode.js"></script>
 	<script src="js/classes/map.js"></script>

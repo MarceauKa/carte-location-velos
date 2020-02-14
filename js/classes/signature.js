@@ -117,4 +117,8 @@ class Signature {
 		this.context.clearRect(0, 0, this.$el.width, this.$el.height);
 		this.points = [];
 	}
+
+	isNotEmpty() {
+		return this.points && this.points.length > 1;
+	}
 }
