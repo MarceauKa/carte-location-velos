@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Marceau Casals">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/leaflet.css">
 	<link rel="stylesheet" href="css/app.css">
 </head>
 <body>
@@ -30,7 +31,7 @@
 	</nav>
 
 	<main role="main" class="container">
-		<div class="card">
+		<div class="card mb-4">
 			<div class="card-body">
 				<div class="diapo">
 					<div class="slides">
@@ -48,11 +49,70 @@
 				</div>
 			</div>
 		</div>
+
+		<div class="row">
+			<div class="col-12 col-sm-6 mb-4">
+				<div class="card">
+					<div class="card-body">
+						<div id="map"></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-sm-6 mb-4">
+				<div class="card">
+					<div class="card-body">
+						<div id="book">
+							<p class="message">Veuillez sélectionner une station.</p>
+							<div class="form">
+								<h4 class="station-name"></h4>
+
+								<p>
+									Adresse : <span class="station-address"></span><br>
+									Disponibilités : <span class="station-available"></span> / <span class="station-total"></span>
+								</p>
+
+								<h6>Réserver</h6>
+
+								<form action="#">
+									<div class="row">
+										<div class="col-12 col-sm-6">
+											<div class="form-group">
+												<input type="text" name="lastname" class="form-control" placeholder="Nom" />
+											</div>
+										</div>
+
+										<div class="col-12 col-sm-6">
+											<div class="form-group">
+												<input type="text" name="firstname" class="form-control" placeholder="Prénom" />
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<canvas class="form-control"></canvas>
+										<small class="text-muted">Veuillez signer</small>
+									</div>
+
+									<div class="form-group">
+										<button class="btn btn-primary">Réserver</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</main>
 
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/leaflet.js"></script>
 	<script src="js/classes/diaporama.js"></script>
+	<script src="js/classes/bookform.js"></script>
+	<script src="js/classes/datasource.js"></script>
+	<script src="js/classes/geocode.js"></script>
+	<script src="js/classes/map.js"></script>
 	<script src="js/app.js"></script>
 </body>
 </html>
