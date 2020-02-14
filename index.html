@@ -51,6 +51,17 @@
 		</div>
 
 		<div class="row">
+			<div class="col-12">
+				<div class="alert alert-info" id="booking">
+					<p class="text-center mb-0">
+						Vous avez une réservation dans la station <span class="station-name"></span>.<br>
+						Cette réservation expire dans <span class="station-expire"></span>.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
 			<div class="col-12 col-sm-6 mb-4">
 				<div class="card">
 					<div class="card-body">
@@ -63,7 +74,10 @@
 				<div class="card">
 					<div class="card-body">
 						<div id="book">
-							<p class="message">Veuillez sélectionner une station.</p>
+							<div class="alert alert-warning message text-center">
+								Veuillez sélectionner une station pour commencer votre réservation.
+							</div>
+
 							<div class="form">
 								<h4 class="station-name"></h4>
 
@@ -102,10 +116,6 @@
 						</div>
 					</div>
 				</div>
-			</div>
-
-			<div class="col-12">
-				<p id="booking"></p>
 			</div>
 		</div>
 	</main>

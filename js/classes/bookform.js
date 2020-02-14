@@ -61,7 +61,8 @@ class Bookform {
 
 	save() {
 		let booking = {
-			station: this.station.number,
+			number: this.station.number,
+			name: this.station.name,
 			end_at: Math.round((new Date()).getTime() / 1000) + 20 * 60,
 		};
 
@@ -78,6 +79,10 @@ class Bookform {
 
 			this.nameToLocalStorage();
 			this.save();
+
+			alert("Votre réservation a été sauvegardée !");
+			this.reset();
+			booking.getSession();
 		});
 	}
 }
