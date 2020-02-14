@@ -17,6 +17,7 @@ class Bookform {
 		this.station = station;
 		this.$message.hide();
 		this.$form.show();
+
 		this.parseStation();
 	}
 
@@ -25,5 +26,7 @@ class Bookform {
 		$('.station-address', this.$form).text(this.station.address);
 		$('.station-available', this.$form).text(this.station.totalStands.availabilities.bikes);
 		$('.station-total', this.$form).text(this.station.totalStands.capacity);
+
+		signature.init();
 	}
 }

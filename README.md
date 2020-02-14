@@ -68,5 +68,5 @@ Le code doit exploiter une API cartographique et l'API temps réel de [API JCDec
 
 ### Ressources complémentaires
 
-En plus des cours du parcours, vous pouvez consulter des ressources extérieures pour vous aider. Par exemple, la [documentation du Mozilla Developer Network](https://developer.mozilla.org/fr/docs/Web/HTML/Canvas) sur l’élément [<canvas>](https://developer.mozilla.org/fr/docs/Web/HTML/Element/canvas).
+En plus des cours du parcours, vous pouvez consulter des ressources extérieures pour vous aider. Par exemple, la [documentation du Mozilla Developer Network](https://developer.mozilla.org/fr/docs/Web/HTML/Canvas) sur l’élément [canvas](https://developer.mozilla.org/fr/docs/Web/HTML/Element/canvas).
 
