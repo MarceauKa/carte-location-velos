@@ -1,6 +1,6 @@
 class Signature {
-	constructor(element, lineWidth = 5) {
-		this.$el = element;
+	constructor(id, lineWidth = 5) {
+		this.$el = document.getElementById(id);
 		this.lineWidth = lineWidth;
 		this.fixOffset = 10;
 	}
@@ -11,9 +11,8 @@ class Signature {
 		this.points = [];
 		this.drawing = false;
 
-		let element = $(this.$el);
-		element.attr('width', element.width());
-		element.attr('height', element.height());
+		this.$el.setAttribute('width', this.$el.clientWidth);
+		this.$el.setAttribute('height', this.$el.clientHeight);
 
 		let rectangle = this.$el.getBoundingClientRect();
 		this.offset = {
@@ -25,31 +24,44 @@ class Signature {
 	}
 
 	bindEvents() {
-		$(this.$el)
-			.on('touchstart mousedown', (event) => {
-				let position = this.getMousePosition(event);
+		this.$el.addEventListener('mousedown', (event) => {
+			this.onStart(event);
+		});
 
-				this.drawing = true;
-				this.points.push({x: position.x, y: position.y, break: false});
+		this.$el.addEventListener('mousemove', (event) => {
+			this.onMove(event);
+		});
 
-				return false;
-			})
-			.on('touchmove mousemove', (event) => {
-				if (this.drawing) {
-					let position = this.getMousePosition(event);
-					this.draw(position.x, position.y);
-				}
+		this.$el.addEventListener('mouseup', (event) => {
+			this.onEnd(event);
+		});
+	}
 
-				return false;
-			})
-			.on('touchend mouseup', (event) => {
-				event.preventDefault();
+	onStart(event) {
+		let position = this.getMousePosition(event);
 
-				this.drawing = false;
-				this.points[this.points.length - 1].break = true;
+		this.drawing = true;
+		this.points.push({x: position.x, y: position.y, break: false});
 
-				return false;
-			});
+		return false;
+	}
+
+	onMove(event) {
+		if (this.drawing) {
+			let position = this.getMousePosition(event);
+			this.draw(position.x, position.y);
+		}
+
+		return false;
+	}
+
+	onEnd(event) {
+		event.preventDefault();
+
+		this.drawing = false;
+		this.points[this.points.length - 1].break = true;
+
+		return false;
 	}
 
 	touch(event) {

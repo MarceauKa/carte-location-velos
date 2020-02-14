@@ -6,12 +6,13 @@ class DataSource {
 
 	findMarkers() {
 		return new Promise((resolve, reject) => {
-			$.get(this.getApiStations())
-				.done((data) => {
-					resolve(data)
-				})
-				.fail(() => {
-					reject();
+			let request = new Request(this.getApiStations());
+
+			fetch(request)
+				.then((response) => {
+					resolve(response.json());
+				}).catch((error) => {
+					reject(error);
 				});
 		})
 	}

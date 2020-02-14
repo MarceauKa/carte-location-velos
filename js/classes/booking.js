@@ -1,6 +1,6 @@
 class Booking {
-	constructor(element) {
-		this.$el = element;
+	constructor(id) {
+		this.$el = document.getElementById(id);
 
 		this.getSession();
 	}

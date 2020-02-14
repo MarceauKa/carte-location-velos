@@ -1,6 +1,6 @@
 class Diaporama {
-	constructor(element, duration = 5000) {
-		this.$el = element;
+	constructor(id, duration = 5000) {
+		this.$el = document.getElementById(id);
 		this.$slides = this.$el.querySelectorAll('.slides .item');
 		this.$controls = this.$el.querySelector('.controls');
 		this.$timer = this.$el.querySelector('.timer');
@@ -26,7 +26,7 @@ class Diaporama {
 		clearTimeout(this.timer);
 
 		this.timer = setTimeout(() => {
-			$('span', this.$timer).css('width', 0);
+			this.$timer.querySelector('span').style.width = 0;
 			this.nextSlide();
 		}, this.duration);
 
@@ -35,20 +35,20 @@ class Diaporama {
 
 	startElapsed() {
 		let elapsed = 0;
-		let timerElement = $('span', this.$timer);
+		let timerElement = this.$timer.querySelector('span');
 		clearInterval(this.progression);
 
 		this.progression = setInterval(() => {
 			elapsed += this.duration / 1000;
 			let width = 100 * elapsed / this.duration;
-			timerElement.css('width', width + '%');
+			timerElement.style.width = width + '%';
 		}, this.duration / 1000);
 	}
 
 	nextSlide() {
 		let nextIndex = this.getNextIndex();
-		let currentSlide = $(this.$slides[this.current]);
-		let nextSlide = $(this.$slides[this.getNextIndex()]);
+		let currentSlide = this.$slides[this.current];
+		let nextSlide = this.$slides[this.getNextIndex()];
 
 		this.current = nextIndex;
 		this.changeSlide(currentSlide, nextSlide);
@@ -56,16 +56,16 @@ class Diaporama {
 
 	previousSlide() {
 		let previousIndex = this.getPreviousIndex();
-		let currentSlide = $(this.$slides[this.current]);
-		let previousSlide = $(this.$slides[previousIndex]);
+		let currentSlide = this.$slides[this.current];
+		let previousSlide = this.$slides[previousIndex];
 
 		this.current = previousIndex;
 		this.changeSlide(currentSlide, previousSlide);
 	}
 
 	changeSlide(current, next) {
-		current.removeClass('active');
-		next.addClass('active');
+		current.classList.remove('active');
+		next.classList.add('active');
 
 		this.getCurrentFromClass();
 		this.startTimer();
